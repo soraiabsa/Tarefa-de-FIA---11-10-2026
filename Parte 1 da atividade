@@ -1,0 +1,17 @@
+p\_flw\_t = 0.1 
+p\_flw\_f = 0.9
+
+p\_r\_dado\_snow\_e\_flw\_t = 0.6 
+p\_r\_dado\_snow\_e\_flw\_f = 0.3
+
+p\_v\_dado\_r\_t = 0.1 
+p\_v\_dado\_r\_f = 0.95
+
+p\_r\_t = (p\_r\_dado\_snow\_e\_flw\_t \* p\_flw\_t) + (p\_r\_dado\_snow\_e\_flw\_f \* p\_flw\_f) p\_r\_f = 1.0 - p\_r\_t
+
+print("P(R=t | snow) =", round(p\_r\_t, 2))
+
+p\_v\_t = (p\_v\_dado\_r\_t \* p\_r\_t) + (p\_v\_dado\_r\_f \* p\_r\_f) p\_v\_f = 1.0 - p\_v\_t
+
+print("P(V=t | snow) =", round(p\_v\_t, 4)) 
+print("P(V=f | snow) =", round(p\_v\_f, 4))
